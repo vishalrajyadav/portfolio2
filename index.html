@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+    <style>
+        body{
+            background-image: url(black-paper-background2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: fixed;
+
+        }
+        .cube {
+            margin-top: 10vh;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            width: 50%;
+            transform-style: preserve-3d;
+            animation: cubeAnimation 4s infinite linear;
+            transition: 2s ease-in-out;
+        }
+
+        .face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            transition: 2s ease-in-out;
+            border: 2px solid black;
+            border-radius: 10%;
+            box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        }
+
+        .front {
+             transform: translateZ(150px); 
+             animation: rowAnimation 10s ease-in-out;
+             background-image: url(mine.jpeg);
+             background-size: cover;
+             transition: 2s ease-in-out;
+             box-shadow: 0px 0px 8px red;
+        }
+
+        .back { 
+            transform: rotateY(180deg) translateZ(150px); animation: rowAnimation 8s ease-in-out;
+            background-image: url(three.jpeg);
+            background-size: cover;
+            transition: 2s ease-in-out;
+            box-shadow: 0px 0px 8px green;
+        }
+
+        .left { transform: rotateY(-90deg) translateZ(150px); animation: rowAnimation 4s ease-in-out;
+            background-image: url(two2.jpg);
+            background-size: cover;
+            transition: 2s ease-in-out;
+            box-shadow: 0px 0px 8px yellow;
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(150px); animation: rowAnimation 2s ease-in-out;
+            background-image: url(myphoto5.jfif);
+            background-size: cover; 
+            transition: 2s ease-in-out;
+            box-shadow: 0px 0px 8px rgb(21, 60, 233);
+        }
+
+        .top { transform: rotateX(90deg) translateZ(150px);
+             animation: rowAnimation 0s ease-in-out;
+            background-size: cover;
+            background-image: url(mine.jpeg);
+        }
+
+        .bottom { transform: rotateX(-90deg) translateZ(150px); animation: rowAnimation 1s ease-in-out;
+        box-shadow: 0px 0px 8px black;
+        transition: 2s ease-in-out;
+        }
+        .face:hover{
+           transform: scale(1.8);
+           /* transform: translateZ(48px); */
+        }
+
+        /* @keyframes rowAnimation {
+            0% { transform: translateZ(150px); }
+            50% { transform: translateY(-250px); }
+            100% { transform: translateZ(-350px); }
+        } */
+
+        @keyframes cubeAnimation {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .intro-container {
+            margin-top: 10vh;
+            margin-left: auto;
+            margin-right: auto;
+            /* width: 100%; */
+            text-align: center;
+            /* background-color: aqua; */
+            /* box-shadow: 0px 0px 8px white; */
+            border-radius: 10px;
+        }
+
+        .intro-text {
+            width: 100%;
+            color:white;
+        }
+
+        .intro-subtext {
+            width: 100%;
+            color: white;
+        }
+        .intro-text {
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        
+        animation: typing 8s steps(80) infinite, blink-caret 1s step-end infinite;
+    }
+
+    @keyframes typing {
+        0% { width: 0; }
+        100% { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-right: 1px solid transparent; }
+        50% { border-right: 1px solid #000; }
+    }
+    .two{ 
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        margin-left: auto 0;
+       
+        
+    }
+    h1{
+        color: red;
+    }
+    .intro-text {
+            transition: width 2s ease-in;
+        }
+    </style>
+
+</head>
+<body style="background-color: aqua;">
+    <div class="container-fluid two" id="two" style="display: inline-block;">
+        <div class="intro-container">
+            <h1 class="intro-text" style="color: rgb(255, 255, 255); margin-left: 25vw; text-shadow: 0px 0px 10px rgb(255, 28, 12);">PORTFOLIO LOADING .... </h1>
+            <p class="intro-subtext" style="font-size: x-large; text-shadow: 0px 0px 12px rgb(5, 207, 5);">Created By Vishal (Vishu)</p>
+        </div>
+        
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+    </div>
+   
+    
+    <script>
+        // Wait for 3 seconds (3000 milliseconds) and then redirect to the home page
+        setTimeout(function() {
+            window.location.href = "portfolio.html";
+        
+        },6000);
+    </script>
+</body>
+</html>
