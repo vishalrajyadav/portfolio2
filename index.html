@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Page 1</title>
+    <title>Portfolio</title>
+    <link rel="icon" href="mine.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap" rel="stylesheet">
     <style>
         body{
             background-image: url(black-paper-background2.jpg);
@@ -9,6 +11,9 @@
             background-size: cover;
             background-attachment: fixed;
             position: fixed;
+        
+            transition: 1s ease-in-out;
+            background-position: center;
 
         }
         .cube {
@@ -19,7 +24,8 @@
             width: 50%;
             transform-style: preserve-3d;
             animation: cubeAnimation 4s infinite linear;
-            transition: 2s ease-in-out;
+            transition: 5s ease-in-out;
+            opacity: 0;
         }
 
         .face {
@@ -36,6 +42,7 @@
             border: 2px solid black;
             border-radius: 10%;
             box-shadow: 0px 0px 10px rgb(255, 255, 255);
+            transition: 4s ease-in-out;
         }
 
         .front {
@@ -113,8 +120,12 @@
         }
 
         .intro-subtext {
+            margin: 24px;
             width: 100%;
             color: white;
+            font-size: xx-large;
+            font-family: 'Herr Von Muellerhoff', cursive;
+            opacity: 0;
         }
         .intro-text {
         width: 0;
@@ -145,18 +156,44 @@
         
     }
     h1{
+       
         color: red;
     }
     .intro-text {
             transition: width 2s ease-in;
         }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        button{
+           width: 90px;
+           height: 45px;
+           color: #000;
+           background-color: red;
+           border-radius: 10px;
+           border: none;
+           outline: none;
+           box-shadow: 0px 0px 8px rgb(0, 255, 247);
+           font-size: medium;
+           opacity: 0;
+           transition: 1s ease-in-out;
+        }
+        button a{
+            color: aliceblue;
+            font-weight: 800;
+        }
+        p{
+            font-size: xx-large;
+        }
     </style>
 
 </head>
-<body style="background-color: aqua;">
+<body id="body" style="background-color: rgb(78, 78, 78);">
     <div class="container-fluid two" id="two" style="display: inline-block;">
         <div class="intro-container">
             <h1 class="intro-text" style="color: rgb(255, 255, 255); margin-left: 25vw; text-shadow: 0px 0px 10px rgb(255, 28, 12);">PORTFOLIO LOADING .... </h1>
+            <button id="button"><a href="portfolio.html">LET'S GO</a></button>
             <p class="intro-subtext" style="font-size: x-large; text-shadow: 0px 0px 12px rgb(5, 207, 5);">Created By Vishal (Vishu)</p>
         </div>
         
@@ -168,15 +205,34 @@
             <div class="face top"></div>
             <div class="face bottom"></div>
         </div>
+   
+           
+       
+       
     </div>
+  
    
     
     <script>
-        // Wait for 3 seconds (3000 milliseconds) and then redirect to the home page
-        setTimeout(function() {
-            window.location.href = "portfolio.html";
+       var button=document.querySelector("#button");
+       var body=document.querySelector("#body");
+       var subtext=document.querySelector(".intro-subtext");
+       var  cube=document.querySelector(".cube");
+       setTimeout(function() {
+            subtext.style.opacity=1;
         
-        },6000);
+         },7000);
+         setTimeout(function() {
+            cube.style.opacity=1;
+        
+         },1400);
+
+         setTimeout(function() {
+            button.style.opacity=1;
+        
+         },9000);
+         
+        
     </script>
 </body>
 </html>
